@@ -1,0 +1,2 @@
+var aaaaa= '奥术大师大所大师大师大师大师大师的气温气温气温气温自行车自行车自行车自行车自行车行政村V字形词v阿斯顿发生子iiiiiiiiiiiiiiiiiiiii市委荣威牌项目支持率毛主席词v，。'
+alert(aaaaa);

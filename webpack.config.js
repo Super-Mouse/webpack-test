@@ -5,12 +5,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
     entry: {
-        main: "./src/main"
+        main: "./src/main",
+        // vender: ['jquery']
     },
     output: {
         path: path.join(__dirname, './dist'),   //存放打包后文件的输出目录，必填
-        // publicPath: './dist/',   //制定资源文件引用的目录
-        filename: '[hash].bundle.js' //指定输出文件的名字
+        //publicPath: '../',   //制定资源文件引用的目录
+        filename: 'js/[name].bundle.js' //指定输出文件的名字
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+         contentBase: './dist'
     },
     module: {
         rules: [
@@ -47,27 +52,10 @@ var config = {
         }),
     ],
     optimization: {
-        /*splitChunks: {
-            chunks: 'all',//"initial" | "async" | "all"
-            cacheGroups: {
-                default: false,
-                vendors: false,
-            },
-        },*/
-        /*splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendor",
-                    chunks: "all"
-                }
-            }
-        }*/
-        runtimeChunk: {
-            name: "manifest"
-        },
+        // runtimeChunk: {
+        //     name: "manifest"
+        // },
         splitChunks: {
-            maxInitialRequests: 2,
             cacheGroups: {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
@@ -77,9 +65,9 @@ var config = {
             }
         }
     },
-    // devServer: {
-    //      contentBase: './dist'
-    // },
+    devServer: {
+         contentBase: './dist'
+    },
 };
 
 

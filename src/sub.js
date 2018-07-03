@@ -1,10 +1,13 @@
-var $ =  require('jquery') ;
+import $ from 'jquery';
 
-module.exports = {
-    aaa: function () {
-        alert("aaa")
-    } ,
-    bbb: function () {
-        alert("bbb")
-    }
+function aaa() {
+    $("#app")[0].onclick = () =>  {
+        console.log('sub')
+    };
+};
+
+function bbb() {
+    alert("bbb")
 }
+
+export {aaa, bbb}

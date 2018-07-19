@@ -1,7 +1,7 @@
 
 import './assets/css/style.css'
 import $ from 'jquery';
-// import Fun from './sub.js'
+import _ from 'lodash';
 
 
 

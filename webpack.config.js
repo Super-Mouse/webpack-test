@@ -12,7 +12,7 @@ var config = {
         //publicPath: '../',   //制定资源文件引用的目录
         filename: 'js/[name].[chunkhash].bundle.js' //指定输出文件的名字
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
          contentBase: './dist'
     },
@@ -63,10 +63,13 @@ var config = {
             // automaticNameDelimiter: '~',
             // name: true,
             cacheGroups: {
-                commons: {
-                    // test: /[\\/]node_modules[\\/]/,
-                    // name: "vendor",
-                    // chunks: "all",
+                jquery: {
+                    test: /jquery/,
+                    chunks: "all",
+                },
+                lodash: {
+                    test: /lodash/,
+                    chunks: "all",
                 }
             }
         }

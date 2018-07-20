@@ -4,9 +4,12 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 
-
-$(document)[0].write("hello webpack112233")
+console.log(_.clone());
+$(document)[0].write("hello66 webpack66");
 document.getElementById('app').onclick = () => import('./sub').then(({aaa}) => {
     import('./a.js');
     aaa();
 });
+
+
+console.log(fenghao);
